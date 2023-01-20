@@ -1,87 +1,100 @@
+//SUSHI DI MARE"
 
-// simulador 
+alert ("Bienvenido a SushiDiMare")
+alert ("En compras superiores a los $10000 tenes $1000 de descuento y en cuotas sin interés")
+alert ("Realizamos envíos GRATIS a Cordoba Capital!!!")
 
-alert ("Bienvenido, comencemos con tu pedido")
+//Funciones
 
-let combo = prompt("Indicanos cual combo te gusto (con numeros):")
-let precioAPagar = Number
-
-switch (combo) {
-    case "1":
-        precioAPagar = 1500
-        console.log(precioAPagar)
-        break;
-
-    case "2":
-        precioAPagar = 3000
-        console.log(precioAPagar)
-        break;
-
-    case "3":
-        precioAPagar = 6000
-        console.log(precioAPagar)
-        break;
-    case "4":
-        precioAPagar = 4000
-        console.log(precioAPagar)
-        break;
-        
-    case "5":
-        precioAPagar = 3000
-        console.log(precioAPagar)
-        break;
-
-    case "6":
-            precioAPagar = 1450
-            console.log(precioAPagar)
-            break;
-    default:
-        break;
+function carritoTotalDeCompras (producto1=0, producto2=0, producto3=0){
+    return producto1 + producto2 + producto3
+}
+function descuentoTotalDeCompras(producto1=0, producto2=0){
+    return producto1 - producto2
 }
 
-console.log(precioAPagar)
+//Variables
 
-alert("Como queres abonar? \n En efectivo tenes un 10% de descuento y con tarjeta tenes 1 o 3 cuotas sin interes.")
+let producto1 = Number(prompt("Primer producto"))
+console.log (producto1)
+let producto2 = Number(prompt("Segundo producto"))
+console.log (producto2)
+let producto3 = Number(prompt("Tercer producto"))
+console.log (producto3)
 
-let metodoPago = prompt("Indicanos como queres pagar:")
-let efectivo = "efectivo" || "Efectivo"
-let tarjeta = "tarjeta" || "Tarjeta"
-let total = Number
+let productosFinales = carritoTotalDeCompras(producto1,producto2,producto3)
+alert(productosFinales)
+// let descuentosFinales = descuentoTotalDeCompras (producto1,producto2)
+// alert(descuentosFinales)
 
-let descuento = (n1) => {return resultado = n1 - (n1 * 0.1) }
-let cuota1 = (n1, n2) => {return resultado = n1 / n2}
-let cuota3 = (n1, n2) => {return resultado = n1 / n2}
+//Condicionales
 
-if (efectivo == metodoPago) {
-    total = descuento(precioAPagar)
-        alert("Tu total a pagar es $" + total)
-        console.log(total)
-} else if (tarjeta == metodoPago) {
-
-    let cuotas = prompt("En cuantas cuotas queres pagar? En 1 o 3 (respuesta con numeros).")
-    switch (cuotas) {
-        case "1":
-            total = cuota1(precioAPagar, 1)
-            alert("El precio a pagar es $" + precioAPagar + ", en 1 cuota de $" + total)
-            console.log(total)
-            break;
-
-        case "3":
-            total = cuota3(precioAPagar, 3)
-            alert("El precio a pagar es $" + precioAPagar + ", en 3 cuotas de $" + total)
-            console.log(total)
-            break;
-
-    default:
-        break;
-    }
+if (productosFinales >= 10000){
+   alert("Recibiste U$S200 de descuento")
+} 
+if (productosFinales <= 9000){
+    alert("No recibiste el descuento")
 }
-let nombre = prompt("Indicanos tu nombre para registrar el pedido.")
-let apellido = prompt("Indicanos tu apellido para registrar el pedido")
-const dni = prompt("Indicanos tu DNI para registrar el pedido.")
-let direccion = prompt("Indicanos tu dirección para hacer el envio.")
-const ciudad = prompt("Indicanos tu ciudad.")
-let correo = prompt("Mail donde recibiras factura.")
 
-alert("El pedido esta hecho a nombre de " + nombre + " " + apellido + " con DNI n°" + dni + " y dirección " + direccion + " en la ciudad de " + ciudad + ".")
-alert("Gracias por tu compra! Te llegara en 1 hs a " + direccion)
+//Datos del usuario para envíos
+
+alert("A continuación debe ingresar sus datos para el envío")
+
+let nombre = prompt ("Ingrese su nombre")
+let apellido = prompt ("Ingrese su apellido")
+let provincia = prompt ("Ingrese provincia")
+let ciudad = prompt ("Ingrese ciudad")
+let domicilio = prompt ("Ingrese su domicilio, departamento y timbre")
+let formasDePago = prompt ("Ingresa tu forma de pago \n 1 pago con transferencia o debito \n2 pago con tarjeta de crédito")
+let cantidadDeCuotas = prompt("Ingresa la cantidad de cuotas, puedes pagar en 3, 6 y 12 SIN INTERES")
+
+alert ("En los próximos minutos recibiras tus productos en la puerta de tu hogar")
+alert ("Muchas gracias por su compra, vuelva pronto!!!")
+
+//Objetos
+
+class Producto{
+    constructor(pescado, relleno, arroz, piezas, precio){
+     this.pescado = pescado;
+     this.relleno = relleno;
+     this.arroz = arroz;
+     this.piezas = piezas;
+     this.precio = precio;
+     this.stock = true;
+ }
+mostrar(){
+    console.log("El relleno es " + (this.relleno) + " y el numero de piezas: " + (this.piezas));
+    console.log("La carne utilizada es " + (this.pescado) + " y es de " + (this.arroz));
+    console.log("El precio del elemento es de " + (this.precio));
+    console.log("Hay disponibilidad " + (this.stock))
+}
+}
+
+
+let producto4 = new Producto ("kanicama", "queso crema", "arroz blanco", "10", 1200);
+producto4.mostrar(Producto);
+let producto5 = new Producto ("langostino", "mostaza y queso crema", "arroz rebozado", "10", 1400);
+producto5.mostrar(Producto);
+let producto6 = new Producto ("Salmon", "palta y queso crema", "arroz blanco y alga nori", "10", 1800);
+producto6.mostrar(Producto); 
+//Array
+const arrayProductos = ["kanicama", "langostino", "salmon"]; 
+
+//Agregado de elementos en el array
+arrayProductos.push("Fundas")
+console.log(arrayProductos.length)
+console.log(arrayProductos)
+const arrayDePrecios = ["Precio del kanicama ", 1200, "Precio del langostino ", 1400, "Precio del salmon ", 1800]
+console.log(arrayDePrecios)
+
+//Ordenes de función superior
+const sushi = [
+    {nombre: "palitos", precio: 100},
+    {nombre: "salsa de soja", precio: 200}, 
+    {nombre: "vino blanco", precio: 500}, 
+    {nombre: "cerveza", precio: 300}
+]
+const nombres = sushi.map ((el) => el.nombre)
+console.log(nombres)
+const precio = sushi.map ((el) => el.precio )
+console.log(precio)
