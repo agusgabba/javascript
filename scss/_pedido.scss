@@ -1,0 +1,27 @@
+  @media screen and (min-width: 320px) {
+    .grid__cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .caja__cards {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media screen and (min-width: 840px) {
+    .grid__cards {
+      grid-template-columns: 5fr 1fr;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .caja__cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
