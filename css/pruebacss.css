@@ -226,12 +226,12 @@
 
 .btn__tacho {
   border: none;
-  width: 60px;
-  height: 70px; }
+  width: 25px;
+  height: 30px; }
 
 .btn__tacho-tacho {
-  width: 60px;
-  height: 70px; }
+  width: 25px;
+  height: 30px; }
 
 .btnYTotal {
   display: flex;
@@ -252,7 +252,7 @@
   height: 40px;
   padding: 4px;
   background-color: #fff;
-  border: solid 3px #79ADDC;
+  border: solid 3px #fd0202;
   border-radius: 15px;
   text-align: center;
   color: #540007; }
@@ -304,6 +304,48 @@ legend {
     align-items: center;
     gap: 0.5rem; } }
 
+.caja__cards {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 3rem; }
+
+.card__producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #fff;
+  width: 310px;
+  height: 520px;
+  border: solid 4px #fd0202;
+  border-radius: 40px;
+  gap: 0.5rem; }
+
+.card__producto-h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold; }
+
+.card__producto-boton {
+  padding: 4px;
+  background-color: #540007;
+  border: solid 3px #fd0202;
+  border-radius: 15px;
+  color: #fff; }
+
+.card__producto-img {
+  width: 300px;
+  height: 300px; }
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; }
+
 @media screen and (min-width: 320px) {
   .grid__cards {
     display: grid;
@@ -326,3 +368,19 @@ legend {
 @media screen and (min-width: 1200px) {
   .caja__cards {
     grid-template-columns: 1fr 1fr 1fr; } }
+
+.main3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0)), url(https://apps.studentaffairs.cmu.edu/dining/conceptinfo/conceptAssets/images/sushi%20photo_2000x1000.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  @media screen and (max-width: 990px) {
+    .main3 {
+      display: flex;
+      flex-direction: column; } }

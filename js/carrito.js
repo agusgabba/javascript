@@ -21,12 +21,12 @@ const hacerCarrito = () => {
         const div = document.createElement('div')
         div.classList.add('card__carro')
         div.innerHTML += `
-                        <img src="../${compra.img}" alt="" class="card__carro-img">
+                        <img src="../img/${compra.img}" alt="" class="card__carro-img">
                         <p class="card__carro-p">${compra.nombre}</p>
                         
                         <p class="card__carro-p">$${compra.precio}</p>
                         <button class="btn__tacho">
-                            <img src="../img/tachoBasura.webp" alt="Basura" class="btn__tacho-img" id="${compra.id}">
+                            <img src="../img/descarga.png" alt="Basura" class="btn__tacho" id="${compra.id}">
                         </button>
         `
         
